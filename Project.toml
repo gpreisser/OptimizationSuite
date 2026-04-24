@@ -1,0 +1,23 @@
+name = "OptimizationSuite"
+uuid = "3c4075f7-8f90-4f12-b4ca-0c8c31b9d3a9"
+version = "0.1.0"
+
+[deps]
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+QiIGS = "3a3ec023-4f5d-4662-91eb-12937d13d0ec"
+QiILS = "827905d2-d693-4b35-89a3-0018b3a7522a"
+QiILS_ITensor = "16890e30-b393-4108-b110-63ed0ed11e0f"
+SimpleWeightedGraphs = "47aef6b3-ad0c-573a-a1e2-d07658019622"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
+[sources]
+QiILS = {path = "../QiILS"}
+QiILS_ITensor = {path = "../QiILS_ITensor"}
+QiIGS = {path = "../QiIGS/QiIGS"}
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
