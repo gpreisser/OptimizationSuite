@@ -1,2 +1,5 @@
 .DS_Store
 results/
+backends/**/results/
+backends/**/plots/
+backends/**/solutions/
