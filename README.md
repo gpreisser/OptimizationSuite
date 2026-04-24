@@ -37,18 +37,14 @@ Conceptually:
 
 ## Installation And Setup
 
-`OptimizationSuite` currently expects the three backend packages to live as sibling directories:
-
-- `../QiILS`
-- `../QiILS_ITensor`
-- `../QiIGS/QiIGS`
+The repository vendors the three backend packages under `backends/`, so a collaborator can clone a single repository and run it directly.
 
 Typical setup:
 
-```julia
-using Pkg
-Pkg.activate("/path/to/OptimizationSuite")
-Pkg.instantiate()
+```bash
+git clone https://github.com/gpreisser/OptimizationSuite.git
+cd OptimizationSuite
+julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
 ```
 
 Current data assumptions:

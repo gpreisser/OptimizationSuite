@@ -1,0 +1,26 @@
+name = "QiIGS"
+uuid = "3a3ec023-4f5d-4662-91eb-12937d13d0ec"
+version = "0.1.0"
+authors = ["gpreisser <guillermopreisser@hotmail.com>"]
+
+[deps]
+GridLayoutBase = "3955a311-db13-416c-9275-1d80ed98e5e9"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+
+[compat]
+GridLayoutBase = "0.11.2"
+JSON = "1.4.0"
+LinearAlgebra = "1.12.0"
+Makie = "0.24.9"
+Optim = "1.9.4"
+ProgressMeter = "1.11.0"
+Random = "1.11.0"
+SparseArrays = "1.12.0"
+Statistics = "1.11.1"

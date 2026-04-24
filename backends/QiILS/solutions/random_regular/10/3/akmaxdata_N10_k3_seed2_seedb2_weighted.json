@@ -1,0 +1,10 @@
+{
+    "N": 10,
+    "k": 3,
+    "seed": 2,
+    "weighted": true,
+    "W": 8.137424903836763,
+    "ising_energy": -6.001415059323962,
+    "maxcut_value": 7.069419981580363,
+    "method": "AKMaxSAT"
+}

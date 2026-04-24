@@ -1,0 +1,14 @@
+{
+    "N": 12,
+    "k": 3,
+    "seed": 8,
+    "seedb": 8,
+    "graph_tag": "pm1weighted",
+    "weighted": true,
+    "weight_type": "pm1",
+    "W": 0.0,
+    "ising_energy": -14.0,
+    "maxcut_value": 7.0,
+    "method": "PuLP_CBC_ILP",
+    "graph_file": "/Users/guillermo.preisser/Projects/QiILS_ITensor/graphs/12/3/graph_N12_k3_seed8_seedb8_pm1weighted.txt"
+}

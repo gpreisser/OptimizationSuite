@@ -1,0 +1,11 @@
+{
+    "N": 70,
+    "k": 3,
+    "seed": 1,
+    "weighted": true,
+    "W": 50.35007741490871,
+    "ising_energy": -44.82239784980914,
+    "maxcut_value": 47.58623763235893,
+    "method": "AKMaxSAT",
+    "graph_file": "/Users/guillermo.preisser/Projects/QiILS_ITensor/graphs/70/3/graph_N70_k3_seed1_seedb1_weighted.txt"
+}

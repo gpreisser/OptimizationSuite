@@ -1,0 +1,21 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Julia artifacts
+*.ji
+
+# VSCode / editor noise
+*.swp
+*~
+.vscode/
+
+# Experiment outputs — DON'T upload these
+results/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log

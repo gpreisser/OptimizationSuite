@@ -1,0 +1,12 @@
+{
+    "N": 50,
+    "k": 3,
+    "seed": 358,
+    "seedb": 358,
+    "weighted": true,
+    "W": 37.18096071864108,
+    "ising_energy": -32.74916720337564,
+    "maxcut_value": 34.96506396100836,
+    "method": "PuLP_CBC_ILP",
+    "graph_file": "/Users/guillermo.preisser/Projects/QiILS_ITensor/graphs/50/3/graph_N50_k3_seed358_seedb358_weighted.txt"
+}
