@@ -3,3 +3,8 @@ results/
 backends/**/results/
 backends/**/plots/
 backends/**/solutions/
+*.png
+*.pdf
+backends/**/scripts/
+backends/**/exercises/
+backends/**/~/
