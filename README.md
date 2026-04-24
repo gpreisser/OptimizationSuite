@@ -8,6 +8,8 @@
 
 The package standardizes instance loading, backend invocation, result saving, and example runner scripts, while leaving the solver logic in the backend packages unchanged.
 
+This repo includes only Gset G12 for a minimal runnable example.
+
 ## Relation To The Paper
 
 This package is based on and inspired by:

@@ -10,6 +10,8 @@ seed = 2
 attempts = 1000
 percentage = 0.2
 
+ENV["OPTIMIZATIONSUITE_GSET_ROOT"] = joinpath(@__DIR__, "..", "backends", "QiILS", "graphs", "gset")
+
 function print_run_block(backend_name::AbstractString, params::Vector{String})
     println("====================================================")
     println("Running backend: $(backend_name)")
