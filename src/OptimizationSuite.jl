@@ -14,6 +14,7 @@ include("save.jl")
 include("runners.jl")
 
 export solve_instance
+export solve_maxcut
 export load_instance_graph
 export load_known_optimal_cut
 export save_result_json

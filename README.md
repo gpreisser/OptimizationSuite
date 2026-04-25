@@ -89,6 +89,40 @@ solve_instance(; backend, instance_type, kwargs...)
 
 Currently the main supported instance type is `:gset`.
 
+For user-provided graphs, the package also provides:
+
+```julia
+solve_maxcut(wg; backend=:qiils, kwargs...)
+```
+
+Example:
+
+```julia
+using OptimizationSuite
+using Graphs
+using SimpleWeightedGraphs
+
+wg = SimpleWeightedGraph(4)
+add_edge!(wg, 1, 2, 1.0)
+add_edge!(wg, 2, 3, 1.0)
+add_edge!(wg, 3, 4, 1.0)
+add_edge!(wg, 4, 1, 1.0)
+
+result = solve_maxcut(
+    wg;
+    backend = :qiils,
+    lambda_sweep = 0.29,
+    attempts = 100,
+    sweeps_per_attempt = 100,
+    percentage = 0.2,
+    seed = 1,
+    angle_conv = 0.1,
+)
+
+println(result["best_cut"])
+println(result["best_configuration"])
+```
+
 ### QiILS Example
 
 ```julia

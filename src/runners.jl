@@ -160,6 +160,46 @@ function _run_qiigs(wg; kwargs...)
     )
 end
 
+function _best_configuration(backend::Symbol, backend_result::Dict)
+    if backend === :qiils
+        best_angles = get(backend_result, "best_angles", nothing)
+        best_angles === nothing && return nothing
+        theta_meas = QiILS.finaltheta(Float64.(best_angles))
+        return QiILS.angles_to_spins(theta_meas)
+    elseif backend === :qiils_itensor
+        return get(backend_result, "best_spins", nothing)
+    elseif backend === :qiigs
+        return get(backend_result, "best_configuration", nothing)
+    else
+        return nothing
+    end
+end
+
+function solve_maxcut(wg; backend::Symbol = :qiils, kwargs...)
+    t0 = time()
+    backend_result = if backend === :qiils
+        _run_qiils(wg; kwargs...)
+    elseif backend === :qiils_itensor
+        _run_qiils_itensor(wg; kwargs...)
+    elseif backend === :qiigs
+        _run_qiigs(wg; kwargs...)
+    else
+        error("Unsupported backend=$backend. Use :qiils, :qiils_itensor, or :qiigs.")
+    end
+    runtime = time() - t0
+
+    best_cut = get(backend_result, "best_cut", nothing)
+    best_configuration = _best_configuration(backend, backend_result)
+
+    return Dict(
+        "backend" => String(backend),
+        "best_cut" => best_cut,
+        "best_configuration" => best_configuration,
+        "runtime" => runtime,
+        "result" => backend_result,
+    )
+end
+
 function solve_instance(; backend::Symbol, instance_type::Symbol, kwargs...)
     graph_kwargs = Dict{Symbol, Any}(kwargs)
     wg, meta = load_instance_graph(; instance_type=instance_type, graph_kwargs...)
