@@ -160,8 +160,10 @@ result = solve_instance(
     lambda = 0.5,
     attempts = 20,
     percentage = 0.2,
-    iterations = 1000,
-    inner_iterations = 100,
+    # outer optimization steps
+    iterations = 10,
+    # inner solver budget (shared across solvers)
+    inner_iterations = 50,
     tao = 0.1,
     angle_conv = 0.1,
     seed = 2,
@@ -170,6 +172,25 @@ result = solve_instance(
     save_params = true,
 )
 ```
+
+### QiIGS solver notes
+
+- `solver = :grad` (default)
+  - Fast and robust
+  - Recommended for most runs
+
+- `solver = :lbfgs`
+  - Higher-quality solutions at increased cost
+  - Best used with moderate budgets (e.g. `inner_iterations ≈ 25–50`)
+
+### Iteration control
+
+For QiIGS:
+
+- `iterations` controls the outer optimization loop
+- `inner_iterations` controls the computational budget per attempt
+
+For `solver = :lbfgs`, `inner_iterations` is mapped internally to the optimizer's `maxiter`.
 
 ### QiILS_ITensor Example
 
