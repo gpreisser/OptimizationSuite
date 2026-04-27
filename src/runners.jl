@@ -145,6 +145,9 @@ function _run_qiigs(wg; kwargs...)
     W = graph_to_sparse_matrix(wg)
     N = nv(wg)
     solver_kwargs = _drop_keys(kwargs, (:gset, :N, :k, :output_path, :weighted))
+    if get(kwargs, :solver, nothing) === :lbfgs && !haskey(solver_kwargs, :maxiter) && haskey(kwargs, :inner_iterations)
+        solver_kwargs[:maxiter] = kwargs[:inner_iterations]
+    end
     best_history, cut_history, best_configuration, best_theta,
     energy_history, grad_norm_history, metadata = QiIGS.qiigs_solve(W, N; solver_kwargs...)
 

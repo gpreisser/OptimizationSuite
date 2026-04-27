@@ -45,6 +45,28 @@ using SimpleWeightedGraphs
     @test haskey(qiigs_result, "best_cut")
     @test haskey(qiigs_result, "approximation_ratio")
 
+    qiigs_lbfgs_result = solve_instance(
+        backend = :qiigs,
+        instance_type = :gset,
+        gset = 12,
+        solver = :lbfgs,
+        lambda = 0.5,
+        attempts = 1,
+        iterations = 10,
+        inner_iterations = 5,
+        percentage = 0.2,
+        seed = 2,
+        tao = 0.1,
+        angle_conv = 0.1,
+        init_mode = :uniform,
+        mix_strategy = :best,
+        g_tol = 0.1,
+        save_params = false,
+    )
+
+    lbfgs_attempt_metadata = qiigs_lbfgs_result["result"]["metadata"][:attempt_metadata][1]
+    @test lbfgs_attempt_metadata[:optim_iterations] <= 5
+
     wg = SimpleWeightedGraph(4)
     add_edge!(wg, 1, 2, 1.0)
     add_edge!(wg, 2, 3, 1.0)
