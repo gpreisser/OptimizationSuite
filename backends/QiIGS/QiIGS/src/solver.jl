@@ -60,7 +60,7 @@ function qiigs_solve(
     angle_conv = 0.1,
     seed::Integer = 1,
     init_mode::Symbol = :updown,
-    mix_strategy::Symbol = :best,
+    mix_strategy::Symbol = :current,
     save_params::Bool = false,
     kwargs...,
 )
